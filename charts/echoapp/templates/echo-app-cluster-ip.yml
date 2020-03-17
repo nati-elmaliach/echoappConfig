@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo-app-cluster-ip # Name of the service
+spec:
+  type: ClusterIP # Type of the service
+  ports:
+    - port: 3000 # extarnal ports
+      targetPort: 3000 # port inside the container
+  selector: # what pods should i serve
+    component: echo-app

@@ -1,0 +1,23 @@
+# This Object is commented because freenom domains are not working properly
+
+# apiVersion: cert-manager.io/v1alpha2
+# kind: Certificate
+# metadate:
+#   name: nati-echoapp-tls
+# spec:
+#   secretName: nati-echoapp-tk
+#   issuerRef: # what issuer to use
+#     name: letsencrypt-prod
+#     kind: ClusterIssuer
+#   commonName: nati-echoapp.tk
+#   dnsNames: # what dns this cert will be good for
+#     - nati-echoapp.tk
+#     - www.nati-echoapp.tk
+#   acme:
+#     config:
+#       - http01:
+#           ingressClass: nginx
+#         domains: # what domains acme will try to access
+#           - nati-echoapp.tk
+#           - www.nati-echoapp.tk
+

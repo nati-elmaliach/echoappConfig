@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: echoapp-dev
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: podinfo-dev
+  chart:
+    git: git@github.com:fluxcd/helm-operator-get-started # todo open a repo
+    path: charts/echoapp
+    ref: master
+  values:
+    image:
+      repository: stefanprodan/podinfo
+      tag: dev-hdtwcel9
+    replicaCount: 1
+    hpa:
+      enabled: false

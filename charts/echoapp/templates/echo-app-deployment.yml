@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.echoDeployment.deploymentName }} # name of the pod 
+spec:
+  replicas: 2 # number of pods
+  selector:
+    matchLabels: # what container should we match 
+      component: echo-app
+  template: # how a single pods sould be configured
+    metadata:
+      labels:
+        component: echo-app
+    spec:
+      containers:
+        - name: echo-app-container
+          image:  "{{ .Values.image.repository }}:{{ .Values.image.tag }}" # what image should we use
+          ports:
+            - containerPort: 3000
+          env:
+            - name: MONGODBURL # name of the env inside the pod
+              valueFrom:
+                  secretKeyRef:
+                    name: mongodb-uri # name of the secret
+                    key: MONGODBURL # key inside the secret
+          envFrom:
+            - configMapRef:
+                name: special-config
+          resources:
+              requests:
+                memory: {{ .Values.echoDeployment.resources.request.memory }}
+                cpu: {{ .Values.echoDeployment.resources.request.cpu }}
+              limits:
+                memory: {{ .Values.echoDeployment.resources.limits.memory }}
+                cpu: {{ .Values.echoDeployment.resources.limits.cpu }}
+      
+  
+                
+                

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations: # higher level configuration
+    kubernetes.io/ingress.class: nginx # use the k8s nginx
+    nginx.ingress.kubernetes.io/rewrite-targe: / # trunc request route
+  
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: echo-app-cluster-ip # name of the cluster ip of the echo-app-deployment
+              servicePort: 3000
+  # The tls is commented because freenom domains are not working properly
+  # tls:
+  #   - hosts: # what hosts name to serve
+  #       - nati-echoapp.tk
+  #       - www.nati-echoapp.tk
+  #     secretName: nati-echoapp-tk # name of the secret

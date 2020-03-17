@@ -1,0 +1,14 @@
+# This Object is commented because freenom domains are not working properly
+
+# apiVersion: cert-manager.io/v1alpha2
+# kind: ClusterIssuer
+# metadata:
+#   name: letsencrypt-prod
+
+# spec:
+#   acme:
+#     server: https://acme-v02.api.letsencrypt.org/directory
+#     email: 'somemail@gmail.com'
+#     privateKeySecretRef:
+#       name: letsencrypt-prod
+#     http01: {}
