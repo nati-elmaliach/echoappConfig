@@ -10,11 +10,11 @@ metadata:
 spec:
   releaseName: podinfo-prod
   chart:
-    git: git@github.com:fluxcd/helm-operator-get-started
+    git: git@github.com:nati-elmaliach/echoappConfig.git
     path: charts/echoapp
     ref: master
   values:
     image:
-      repository: stefanprodan/podinfo
-      tag: 0.4.11
-    replicaCount: 3
+      repository: eu.gcr.io/future-depth-270520/echo-app
+      tag: latest
+    replicaCount: 1

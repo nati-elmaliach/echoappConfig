@@ -10,12 +10,12 @@ metadata:
 spec:
   releaseName: podinfo-dev
   chart:
-    git: git@github.com:fluxcd/helm-operator-get-started # todo open a repo
+    git: git@github.com:nati-elmaliach/echoappConfig
     path: charts/echoapp
     ref: master
   values:
     image:
-      repository: stefanprodan/podinfo
+      repository: eu.gcr.io/future-depth-270520/echo-app
       tag: dev-hdtwcel9
     replicaCount: 1
     hpa:
