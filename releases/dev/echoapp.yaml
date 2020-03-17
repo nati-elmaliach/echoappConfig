@@ -8,7 +8,7 @@ metadata:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:dev-*
 spec:
-  releaseName: podinfo-dev
+  releaseName: echoapp-dev
   chart:
     git: git@github.com:nati-elmaliach/echoappConfig
     path: charts/echoapp
