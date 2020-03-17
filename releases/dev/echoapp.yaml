@@ -18,5 +18,3 @@ spec:
       repository: eu.gcr.io/future-depth-270520/echo-app
       tag: dev-hdtwcel9
     replicaCount: 1
-    hpa:
-      enabled: false

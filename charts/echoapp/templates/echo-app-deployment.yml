@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: echo-app-container
-          image:  "{{ .Values.image.repository }}:{{ .Values.image.tag }}" # what image should we use
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }} # what image should we use
           ports:
             - containerPort: 3000
           env:
