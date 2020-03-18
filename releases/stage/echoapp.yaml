@@ -2,13 +2,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: ecoapp-prod
+  name: ecoapp-stage
   namespace: prod
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~0.4
+    filter.fluxcd.io/chart-image: glob:stage-*
 spec:
-  releaseName: echoapp-prod
+  releaseName: echoapp-stage
   chart:
     git: git@github.com:nati-elmaliach/echoappConfig.git
     path: charts/echoapp
@@ -19,4 +19,6 @@ spec:
       tag: latest
     configmap:
       PERSIST: true
+      DBNAME: echo-staging
     replicaCount: 1
+

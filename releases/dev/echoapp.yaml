@@ -15,6 +15,8 @@ spec:
     ref: master
   values:
     image:
-      repository: eu.gcr.io/future-depth-270520/echo-app
+      repository: eu.gcr.io/future-depth-270520/echoapp
       tag: dev-hdtwcel9
+    configmap:
+      PERSIST: false
     replicaCount: 1
