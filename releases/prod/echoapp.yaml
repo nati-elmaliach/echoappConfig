@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/future-depth-270520/echoapp
-      tag: 1.0.1
+      tag: 1.0.10
     configmap:
       PERSIST: true
     replicaCount: 1
