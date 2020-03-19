@@ -20,7 +20,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: special-config
-            {{- if .Values.configmap.PERSIST -}}
+            {{- if .Values.configmap.PERSIST }}
             - secretRef:
                 name: {{ .Values.service.name }}-db-secret # name of the secret
             {{- end }}
