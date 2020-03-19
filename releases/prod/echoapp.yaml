@@ -20,3 +20,10 @@ spec:
     configmap:
       PERSIST: true
     replicaCount: 1
+    mongodb-replicaset:
+      auth:
+        metricsUser: metrics
+        metricsPassword: password
+        existingMetricsSecret: ""
+      metrics:
+        enabled: true
