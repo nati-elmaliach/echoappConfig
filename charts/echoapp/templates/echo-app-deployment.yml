@@ -21,7 +21,7 @@ spec:
             - configMapRef:
                 name: special-config
             - secretRef:
-                name: {{ .Values.service.name }}-secret # name of the secret
+                name: {{ .Values.service.name }}-db-secret # name of the secret
           resources:
               requests:
                 memory: {{ .Values.echoDeployment.resources.request.memory }}
