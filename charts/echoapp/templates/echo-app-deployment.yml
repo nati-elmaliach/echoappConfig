@@ -17,15 +17,11 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }} # what image should we use
           ports:
             - containerPort: 3000
-          env:
-            - name: MONGODBURL # name of the env inside the pod
-              valueFrom:
-                  secretKeyRef:
-                    name: mongodb-uri # name of the secret
-                    key: MONGODBURL # key inside the secret
           envFrom:
             - configMapRef:
                 name: special-config
+            - secretRef:
+                name: {{ .Values.service.name }}-secret # name of the secret
           resources:
               requests:
                 memory: {{ .Values.echoDeployment.resources.request.memory }}

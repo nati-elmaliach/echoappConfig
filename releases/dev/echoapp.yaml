@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/future-depth-270520/echoapp
-      tag: dev-hdtwcel9
+      tag: dev-5305542c
     configmap:
       PERSIST: false
     service:

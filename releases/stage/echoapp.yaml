@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/future-depth-270520/echoapp
-      tag: stage-nati
+      tag: stage-5305542c
     configmap:
       PERSIST: true
       DBNAME: echo-staging
@@ -33,5 +33,5 @@ spec:
             backend:
               serviceName: echoapp-service-stage
               servicePort: 3000
+    mongosecret: "mongodb://user:password@mongo-0.mongo,mongo-1.mongo,mongo-2.mongo:27017/echostage?authSource=admin"
     replicaCount: 1
-

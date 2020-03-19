@@ -111,7 +111,10 @@ elastic-stack:
       host: "echoapp-elasticsearch-client"
 
 
+mongosecret: "mongodb://user:password@mongo-0.mongo,mongo-1.mongo,mongo-2.mongo:27017/echo?authSource=admin"
+
 # Set configMap values
+
 configmap:
   PORT: 3000
   LOGLEVEL: info
