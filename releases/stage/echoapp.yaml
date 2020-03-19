@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/future-depth-270520/echoapp
-      tag: latest
+      tag: stage-nati
     configmap:
       PERSIST: true
       DBNAME: echo-staging
