@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/future-depth-270520/echoapp
-      tag: dev-5305542c
+      tag: dev-603b0db4
     configmap:
       PERSIST: false
     service:
@@ -26,10 +26,10 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
       hosts:
-        - host: www.dev.nati-echoapp.tk
-          paths:
-          - path: /
-            backend:
-              serviceName: echoapp-service-dev
-              servicePort: 3000
+      - host: www.dev.nati-echoapp.tk
+        paths:
+        - path: /
+          backend:
+            serviceName: echoapp-service-dev
+            servicePort: 3000
     replicaCount: 1
