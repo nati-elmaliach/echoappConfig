@@ -3,10 +3,10 @@ kind: ConfigMap
 metadata:
   name: special-config
 data:
-  PORT: {{ .Values.configmap.PORT }}
-  LOGLEVEL: {{ .Values.configmap.LOGLEVEL }}
+  PORT: {{ .Values.configmap.PORT | quote }}
+  LOGLEVEL: {{ .Values.configmap.LOGLEVEL | quote }}
   {{- if .Values.configmap.PERSIST }}
   PERSIST: "true"
   {{- end }}
-  DBNAME: {{ .Values.configmap.DBNAME }}
+  DBNAME: {{ .Values.configmap.DBNAME | quote }}
 
