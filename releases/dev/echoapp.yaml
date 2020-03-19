@@ -19,4 +19,17 @@ spec:
       tag: dev-hdtwcel9
     configmap:
       PERSIST: false
+    service:
+      name: echoapp-service-dev
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+      hosts:
+        - host: www.dev.nati-echoapp.tk
+          paths:
+          - path: /
+            backend:
+              serviceName: echoapp-service-dev
+              servicePort: 3000
     replicaCount: 1

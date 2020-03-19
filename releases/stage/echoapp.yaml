@@ -20,5 +20,18 @@ spec:
     configmap:
       PERSIST: true
       DBNAME: echo-staging
+    service:
+      name: echoapp-service-stage
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+      hosts:
+        - host: www.stage.nati-echoapp.tk
+          paths:
+          - path: /
+            backend:
+              serviceName: echoapp-service-stage
+              servicePort: 3000
     replicaCount: 1
 
